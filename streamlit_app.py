@@ -13,6 +13,9 @@ streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 
+#Setting the index to the Fruit column
+my_fruit_list = my_fruit_list.set_index('Fruit')
+
 #Including a pick list to they can pick the fruit thet want to include
 streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
 
